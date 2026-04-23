@@ -1,0 +1,188 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: linear-gradient(135deg, #d32f2f, #bb0a54);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #ffe600;
+}
+
+
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box {
+  display: flex;
+  width: 100%;
+}
+
+.navbar-center input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+  min-width: 0;
+}
+
+.navbar-center button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #fff;
+  color: #ff6b00;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar-center button:hover {
+  background-color: #ffe600;
+}
+
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right select {
+  padding: 6px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.icon {
+  font-size: 1.3rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+  color: #ffe600;
+  transform: scale(1.2);
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #bb0a54;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    z-index: 1000;
+  }
+
+ 
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    margin: 10px 0;
+  }
+
+  .navbar-center {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .navbar-center input {
+    width: 100%;
+  }
+
+  .navbar-center button {
+    white-space: nowrap;
+  }
+
+
+  .navbar-right {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}

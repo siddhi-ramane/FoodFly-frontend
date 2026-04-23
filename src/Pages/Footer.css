@@ -1,0 +1,68 @@
+.foodfly-footer {
+    background: linear-gradient(135deg, #d32f2f, #bb0a54);
+    color: white;
+    padding: 50px 20px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-links li:hover {
+    transform: translateX(5px);
+    color: #ffd6e0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.social-icons svg {
+    transition: 0.3s;
+}
+
+.social-icons svg:hover {
+    transform: scale(1.2);
+    color: #ffd6e0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}

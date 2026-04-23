@@ -1,0 +1,165 @@
+
+.food-wrapper {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+
+.food-container {
+  width: 100%;
+  max-width: 1200px;  
+}
+
+
+.food-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+
+.food-empty {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
+
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); ;
+  justify-content: center; 
+  gap: 25px;
+}
+
+
+.food-card {
+  width: 100%; 
+  max-width: 300px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+
+.food-img-box {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.food-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.food-card:hover img {
+  transform: scale(1.08);
+}
+
+
+.food-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+
+.food-content {
+  padding: 14px;
+}
+
+
+.food-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.food-desc {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+  height: 36px;
+  overflow: hidden;
+}
+
+
+.food-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.food-tags span {
+  background: #eef1f6;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 10px;
+}
+
+
+.food-meta {
+  font-size: 12px;
+  display: grid;
+  gap: 4px;
+}
+
+
+.available {
+  color: green;
+  font-weight: 600;
+}
+
+.not-available {
+  color: red;
+  font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+  .food-heading {
+    font-size: 24px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+
+@media (max-width: 480px) {
+  .food-wrapper {
+    padding: 15px 10px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+}

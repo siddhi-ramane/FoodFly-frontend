@@ -1,0 +1,155 @@
+
+.menu-container {
+  padding: 30px;
+  background: #f7f7fb;
+  min-height: 100vh;
+}
+
+.menu-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+
+.menu-card-item {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+
+.menu-card-item:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.menu-image-box {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.menu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4f;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+
+
+.menu-content {
+  padding: 14px;
+}
+
+.menu-name {
+  font-size: 18px;
+  font-weight: 700;
+  display: inline;
+}
+
+.menu-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+
+.menu-chip {
+  background: #e8f0ff;
+  color: #2f6fed;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+
+.menu-detailss p {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.status-green {
+  color: #1a9c4b;
+  font-weight: 600;
+}
+
+.status-red {
+  color: #e53935;
+  font-weight: 600;
+}
+
+
+.add-btn {
+  margin: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+@media (max-width: 992px) {
+  .menu-container {
+    padding: 20px;
+  }
+
+  .menu-image-box {
+    height: 160px;
+  }
+
+  .menu-name {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .menu-container {
+    padding: 15px;
+  }
+
+  .menu-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .menu-image-box {
+    height: 180px;
+  }
+
+  .menu-name {
+    font-size: 16px;
+  }
+
+  .add-btn {
+    width: calc(100% - 24px);
+    margin: 10px auto 14px;
+    display: block;
+  }
+}
