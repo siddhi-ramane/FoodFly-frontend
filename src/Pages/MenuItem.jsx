@@ -57,7 +57,7 @@ useEffect(() => {
   };
 
   pagedata();
-}, [page]);
+}, [page, size]);
 
   const addToCart = (item) => {
  

@@ -5,12 +5,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const IntroSection = () => {
-  const [item, setitem] = useState([]);
+  // const [item, setitem] = useState([]);
   const [data, setdata] = useState([]);
   const [msg, setmsg] = useState("");
   const navigate = useNavigate();
 
-  const itemScrollRef = useRef();
+  // const itemScrollRef = useRef();
   const cuisineScrollRef = useRef();
 
   const scroll = (ref, direction) => {
@@ -23,10 +23,11 @@ const IntroSection = () => {
   const items = async () => {
     try {
       const info = await axios.get("https://foodfly-backend-9.onrender.com/items/getItems");
-      setitem(info.data);
+      setdata(info.data);
     } catch (error) 
     {
       setmsg("Items not Found");
+      
     }
   };
 
@@ -93,6 +94,8 @@ const IntroSection = () => {
       {/* <div className="grid-wrapper">
         <h2 className="section-title">Explore Items</h2>
 
+
+
         <div className="scroll-container">
           <button
             className="arrow left"
@@ -124,6 +127,8 @@ const IntroSection = () => {
 
       <div className="carousel-wrapper">
         <h2 className="carousel-title">Explore Our Cuisines </h2>
+
+      {msg && <div className="error-msg">{msg}</div>}
 
         <div className="carousel-container">
           <button

@@ -13,7 +13,7 @@ const CartPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const [itemdata, setitemdata] = useState([]);
   const [msg, setmsg] = useState("");
-  const [clear, setclear] = useState("");
+  // const [clear, setclear] = useState("");
 
 
     const getdata = async () => {
@@ -52,7 +52,7 @@ const CartPage = () => {
      
     }
  getdata();
-    }, []);
+    }, [user]);
 
 
 
@@ -110,23 +110,23 @@ const CartPage = () => {
 
   
 
-    const deleteitemall = async (item) =>{
-    try {
-      await axios.delete("https://foodfly-backend-9.onrender.com/cart/delete/all",
+  //   const deleteitemall = async (item) =>{
+  //   try {
+  //     await axios.delete("https://foodfly-backend-9.onrender.com/cart/delete/all",
 
-      {
+  //     {
         
-      },
-      {
-        header :{
-          "Content-Type": "application/json"
-        }
-      }
-    );
-    } catch (error) {
+  //     },
+  //     {
+  //       header :{
+  //         "Content-Type": "application/json"
+  //       }
+  //     }
+  //   );
+  //   } catch (error) {
       
-    }
-  }
+  //   }
+  // }
 
   const decreasequantity = async (item) => {
     if (item.quantity === 1) {
@@ -220,9 +220,15 @@ const orderpostt = async (orderdata) => {
 
   return (
   <>
-    <div className="main-div">
+  <div className="main-div">
 
-      <div className="left-div"></div>
+  {msg && (
+    <div className="error-msg">
+      {msg}
+    </div>
+  )}
+
+  <div className="left-div"></div>
 
     
       {itemdata.length === 0 ? (

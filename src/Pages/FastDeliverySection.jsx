@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import "./FastDeliverySection.css";
 import fastDeliveryImage from "../assets/fastDeliveryImage.png";
 import { useNavigate } from "react-router-dom";

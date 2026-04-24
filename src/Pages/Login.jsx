@@ -47,6 +47,7 @@ const submition = async (e)=>{
       nagivate("/menuitems"); 
     } catch (err) {
       alert("Invalid email or password");
+      setMessage("Invalid email or password");
       console.log(err);
     }
   };

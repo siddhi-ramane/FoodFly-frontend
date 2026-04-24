@@ -12,18 +12,7 @@ const user = JSON.parse(localStorage.getItem("user"));
   const [msg, setmsg] = useState(""); 
   
   
-      const cuisineData = async()=>{
-  try {
-  
-        const ans = await axios.get(`https://foodfly-backend-9.onrender.com/menuItems/search?q=${query}`)
-        setdata(ans.data);
-        
-        
-      } catch (error) {
-            setmsg("Items not Found");
-      }
-      
-      }
+    
 
        const navigate = useNavigate();
 
@@ -60,8 +49,21 @@ const quantity = 1;
       
    
   };
+   useEffect(()=>{
+
+    const cuisineData = async()=>{
+  try {
   
-  useEffect(()=>{
+        const ans = await axios.get(`https://foodfly-backend-9.onrender.com/menuItems/search?q=${query}`)
+        setdata(ans.data);
+        
+        
+      } catch (error) {
+            setmsg("Items not Found");
+      }
+      
+      }
+ 
       cuisineData();
   },[query]);
 

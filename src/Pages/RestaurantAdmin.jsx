@@ -36,7 +36,7 @@ useEffect(()=>{
   data();
 } ,[]);
 
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -61,7 +61,7 @@ useEffect(()=>{
           {
         headers: { "Content-Type": "application/json" },
       });
-      setMessage("Item added successfully!");
+      setmsg("Item added successfully!");
       setForm({
         item_name: "",
         item_Description: "",
@@ -79,14 +79,14 @@ useEffect(()=>{
       });
     } catch (error) {
       console.error(error);
-      setMessage("Failed to add item.");
+      setmsg("Failed to add item.");
     }
   };
 
   return (
     <div className="form-container">
       <h2>Add Menu Item</h2>
-      {message && <p className="message">{message}</p>}
+      {msg && <p className="message">{msg}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-row">
 

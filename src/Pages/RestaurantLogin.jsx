@@ -44,7 +44,7 @@ e.preventDefault();
         });
 
         localStorage.setItem("user", JSON.stringify(ress.data));
-        if(ress.data.role == "Restaurant"){
+        if(ress.data.role === "Restaurant"){
             navigate("/restaurant/addmenu");
          
     }

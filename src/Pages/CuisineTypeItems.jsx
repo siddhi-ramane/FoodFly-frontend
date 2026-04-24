@@ -43,7 +43,7 @@ const quantity = 1;
       
    
   };
-
+useEffect(()=>{
     const cuisineData = async()=>{
 try {
 
@@ -56,7 +56,7 @@ try {
 
     
 
-useEffect(()=>{
+
     cuisineData();
 },[id]);
 

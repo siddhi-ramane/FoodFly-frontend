@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setquery] = useState("");
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
   const navigate = useNavigate();
 
