@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaMinus } from "react-icons/fa";
-import { CiLocationOn } from "react-icons/ci";
+// import { CiLocationOn } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
 
 
