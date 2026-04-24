@@ -49,8 +49,8 @@ const [menuData, setMenuData] = useState([]);
       );
 
      
-      setMenuData(response.data.content);     
-      setTotalPages(response.data.totalPages);
+      setMenuData(res.data.content);     
+      settotalPages(res.data.totalPages);
 
     } catch (error) {
       setMsg("No Items Found");
@@ -58,7 +58,7 @@ const [menuData, setMenuData] = useState([]);
   };
 
  useEffect(() => {
-    fetchMenu();
+    pagedata();
   }, [page, size]);
 
   const addToCart = (item) => {
