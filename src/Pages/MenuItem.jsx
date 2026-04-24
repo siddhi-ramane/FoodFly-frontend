@@ -9,7 +9,7 @@ const MenuItem = () => {
   // const [menu, setMenu] = useState([]);
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
- const [data, setData] = useState([]);
+const [menuData, setMenuData] = useState([]); 
   const [page, setPage] = useState(0);       
   const [size] = useState(8);               
   const [totalPages, settotalPages] = useState(0);
@@ -41,23 +41,25 @@ const MenuItem = () => {
 
 
 
-useEffect(() => {
+
   const pagedata = async () => {
     try {
       const res = await axios.get(
         `https://foodfly-backend-17.onrender.com/menuItems/get?page=${page}&size=${size}`
       );
 
-      setData(res.data.content);
-      settotalPages(res.data.totalPages);
+     
+      setMenuData(response.data.content);     
+      setTotalPages(response.data.totalPages);
 
     } catch (error) {
       setMsg("No Items Found");
     }
   };
 
-  pagedata();
-}, [page, size]);
+ useEffect(() => {
+    fetchMenu();
+  }, [page, size]);
 
   const addToCart = (item) => {
  
@@ -104,7 +106,7 @@ if (isApproved !== 1) {
   return (
     <>
     <div className="menu-container">
-      {data.length > 0 ? data.map((p) => (
+      {menuData.length > 0 ? menuData.map((p) => (
         <div className="menu-card" key={p.id}>
           <div className="menu-image">
             <img src={p.image_URL} alt={p.item_name} />
@@ -152,7 +154,8 @@ if (isApproved !== 1) {
 }
 
 
-<button className='right' disabled={page === 0} 
+<button className='right' 
+          disabled={page === totalPages - 1} 
           onClick={() => setPage(prev => prev + 1)}> <FaLongArrowAltRight /> </button>
 </div>
 </>

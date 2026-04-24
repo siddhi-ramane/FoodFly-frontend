@@ -9,6 +9,8 @@ const IntroSection = () => {
   const [data, setdata] = useState([]);
   const [msg, setmsg] = useState("");
   const navigate = useNavigate();
+  const [itemsData, setItemsData] = useState([]);   
+  const [cuisineData, setCuisineData] = useState([]);
 
   // const itemScrollRef = useRef();
   const cuisineScrollRef = useRef();
@@ -23,7 +25,7 @@ const IntroSection = () => {
   const items = async () => {
     try {
       const info = await axios.get("https://foodfly-backend-17.onrender.com/items/getItems");
-      setdata(info.data);
+       setItemsData(info.data); 
     } catch (error) 
     {
       setmsg("Items not Found");
@@ -35,7 +37,7 @@ const IntroSection = () => {
     try {
       const info = 
       await axios.get("https://foodfly-backend-17.onrender.com/cuisine/getcusine");
-    setdata(info.data);
+    setCuisineData(info.data);
     } 
     catch (error) {
       setmsg("Cuisine not Found");
@@ -140,7 +142,7 @@ const IntroSection = () => {
           </button>
 
           <div className="carousel-track" ref={cuisineScrollRef}>
-            {data.map((i) => (
+            {cuisineData.map((i) => ( 
               <div key={i.cusineTypeid} className="product-card" onClick={()=>datafetched(i.cusineTypeid) } >
                 <img
                   className="product-img"
