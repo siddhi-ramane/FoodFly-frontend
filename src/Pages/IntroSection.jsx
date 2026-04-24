@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const IntroSection = () => {
   // const [item, setitem] = useState([]);
-  const [data, setdata] = useState([]);
+  // const [data, setdata] = useState([]);
   const [msg, setmsg] = useState("");
   const navigate = useNavigate();
   const [itemsData, setItemsData] = useState([]);   
@@ -67,6 +67,7 @@ const IntroSection = () => {
   </div>
 
   <div className="intro-content">
+    
 
     <div className="badge">⭐ 100% Customer Satisfaction Guaranteed</div>
 
@@ -129,6 +130,7 @@ const IntroSection = () => {
 
       <div className="carousel-wrapper">
         <h2 className="carousel-title">Explore Our Cuisines </h2>
+        <p>Total Items Available: {itemsData.length}</p>
 
       {msg && <div className="error-msg">{msg}</div>}
 

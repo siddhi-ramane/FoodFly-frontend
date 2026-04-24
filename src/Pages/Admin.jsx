@@ -99,7 +99,7 @@ const Admin = () => {
     }
     try {
      await axios.post(
-        "https://foodfly-backend-17.onrender.com/Role/add",
+        "https://foodfly-backend-17.onrender.com/role/add",
         {
           username: form.username,
           password: form.password,
