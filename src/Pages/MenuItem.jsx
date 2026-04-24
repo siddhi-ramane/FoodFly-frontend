@@ -41,7 +41,7 @@ const [menuData, setMenuData] = useState([]);
 
 
 
-
+useEffect(() => {
   const pagedata = async () => {
     try {
       const res = await axios.get(
@@ -57,7 +57,7 @@ const [menuData, setMenuData] = useState([]);
     }
   };
 
- useEffect(() => {
+ 
     pagedata();
   }, [page, size]);
 
