@@ -5,6 +5,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { FaMinus } from "react-icons/fa";
 // import { CiLocationOn } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
+import React, { useCallback } from "react";
 
 
 
@@ -16,18 +17,17 @@ const CartPage = () => {
   // const [clear, setclear] = useState("");
 
 
-    const getdata = async () => {
-      try {
-     const respo = await axios.get(`https://foodfly-backend-9.onrender.com/cart/get/${user.id}`);
-        setitemdata(respo.data);
-        console.log(respo);
-
-        
-      } catch (error) {
-        setmsg("No Item Found");
-      }
-    };
-
+  const getdata = useCallback(async () => {
+  try {
+    const respo = await axios.get(
+      `https://foodfly-backend-9.onrender.com/cart/get/${user.id}`
+    );
+    setitemdata(respo.data);
+    console.log(respo);
+  } catch (error) {
+    setmsg("No Item Found");
+  }
+}, [user]);
     
     
 
@@ -52,7 +52,7 @@ const CartPage = () => {
      
     }
  getdata();
-    }, [user]);
+    }, [user, getdata]);
 
 
 
