@@ -20,7 +20,7 @@ const CartPage = () => {
   const getdata = useCallback(async () => {
   try {
     const respo = await axios.get(
-      `https://foodfly-backend-9.onrender.com/cart/get/${user.id}`
+      `https://foodfly-backend-11.onrender.com/cart/get/${user.id}`
     );
     setitemdata(respo.data);
     console.log(respo);
@@ -34,7 +34,7 @@ const CartPage = () => {
 
   // const clearalldata = async () => {
   //     try {
-  //    const respo = await axios.get(`https://foodfly-backend-9.onrender.com/cart/get/${user.id}`);
+  //    const respo = await axios.get(`https://foodfly-backend-11.onrender.com/cart/get/${user.id}`);
   //       setclear(respo.data);
   //       console.log(respo);
   //     } catch (error) {
@@ -61,7 +61,7 @@ const CartPage = () => {
   const increasequantity = async (item) => {
     try {
     await axios.patch(
-        "https://foodfly-backend-9.onrender.com/cart/update/cartitems",
+        "https://foodfly-backend-11.onrender.com/cart/update/cartitems",
         {
           cartid: item.cartid,
           quantity: item.quantity + 1},
@@ -91,7 +91,7 @@ const CartPage = () => {
 
   const deleteitem = async (item) =>{ 
     try {
-      await axios.delete(`https://foodfly-backend-9.onrender.com/cart/delete/${item.cartid}`,
+      await axios.delete(`https://foodfly-backend-11.onrender.com/cart/delete/${item.cartid}`,
 
       {
         
@@ -112,7 +112,7 @@ const CartPage = () => {
 
   //   const deleteitemall = async (item) =>{
   //   try {
-  //     await axios.delete("https://foodfly-backend-9.onrender.com/cart/delete/all",
+  //     await axios.delete("https://foodfly-backend-11.onrender.com/cart/delete/all",
 
   //     {
         
@@ -135,7 +135,7 @@ const CartPage = () => {
     }
      try {
      await axios.patch(
-        "https://foodfly-backend-9.onrender.com/cart/update/cartitems",
+        "https://foodfly-backend-11.onrender.com/cart/update/cartitems",
         {
           cartid: item.cartid,
            quantity: item.quantity - 1},
@@ -177,7 +177,7 @@ const orderdata = {
 const orderpostt = async (orderdata) => {
   try {
     const res = await axios.post(
-      "https://foodfly-backend-9.onrender.com/create-order",
+      "https://foodfly-backend-11.onrender.com/create-order",
       orderdata
     );
 
