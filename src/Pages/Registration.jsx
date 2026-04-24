@@ -41,7 +41,7 @@ const handleSubmit = async (e) =>{
      }
 
      try{
-        const resp = await axios.post("https://foodfly-backend-12.onrender.com/customerDetails/register", 
+        const resp = await axios.post("https://foodfly-backend-17.onrender.com/customerDetails/register", 
            {
             name : form.name,
             lastName: form.lastname,

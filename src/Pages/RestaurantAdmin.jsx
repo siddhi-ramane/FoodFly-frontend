@@ -24,7 +24,7 @@ const RestaurantAdmin = () => {
 
 const data = async ()=>{
 try {
-    const resss =  await axios.get("https://foodfly-backend-12.onrender.com/cuisine/getcusine");
+    const resss =  await axios.get("https://foodfly-backend-17.onrender.com/cuisine/getcusine");
 setcusine(resss.data);
 
 } catch (error) {
@@ -56,7 +56,7 @@ useEffect(()=>{
       prep_time: form.prep_time ? Number(form.prep_time) : null,
       isActive: form.isActive ?? true,
  }
-      await axios.post("https://foodfly-backend-12.onrender.com/menu/add/items",
+      await axios.post("https://foodfly-backend-17.onrender.com/menu/add/items",
          submitdata,
           {
         headers: { "Content-Type": "application/json" },

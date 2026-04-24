@@ -18,7 +18,7 @@ const Admin = () => {
     const getMenu = async () => {
       if (select === "menulist") {
         try {
-          const response = await axios.get("https://foodfly-backend-12.onrender.com/menu/get");
+          const response = await axios.get("https://foodfly-backend-17.onrender.com/menu/get");
           setMenu(response.data);
         } catch (error) {
           console.error("Error fetching menu:", error);
@@ -45,7 +45,7 @@ const Admin = () => {
 
   const Patchhandle =  async (id)=>{
         try {
-           await axios.patch(`https://foodfly-backend-12.onrender.com/menu/${id}/approve`,
+           await axios.patch(`https://foodfly-backend-17.onrender.com/menu/${id}/approve`,
            {
             isApproved: "true"
            },
@@ -68,7 +68,7 @@ const Admin = () => {
 
  const deletehandlee =  async (id)=>{
         try {
-           await axios.delete(`https://foodfly-backend-12.onrender.com/menu/${id}/delete`,
+           await axios.delete(`https://foodfly-backend-17.onrender.com/menu/${id}/delete`,
           
           );
            alert("Successfully Rejected"
@@ -99,7 +99,7 @@ const Admin = () => {
     }
     try {
      await axios.post(
-        "https://foodfly-backend-12.onrender.com/Role/add",
+        "https://foodfly-backend-17.onrender.com/Role/add",
         {
           username: form.username,
           password: form.password,
