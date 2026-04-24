@@ -12,7 +12,7 @@
 //       return;
 
 //     axios
-//       .get(`https://foodfly-backend-11.onrender.com/cart/get/${user.id}`)
+//       .get(`https://foodfly-backend-12.onrender.com/cart/get/${user.id}`)
 //       .then((res) => setCartItems(res.data))
 //       .catch((err) => console.log(err));
 //   };
@@ -24,7 +24,7 @@
 //   const increaseQty = (item) => {
 //     axios
 //       .patch(
-//         `https://foodfly-backend-11.onrender.com/cart/update/${item.id}`,
+//         `https://foodfly-backend-12.onrender.com/cart/update/${item.id}`,
 //         null,
 //         { params: { quantity: item.quantity + 1  } }
 //       )
@@ -38,7 +38,7 @@
 
 //     axios
 //       .patch(
-//         `https://foodfly-backend-11.onrender.com/cart/update/${item.id}`,
+//         `https://foodfly-backend-12.onrender.com/cart/update/${item.id}`,
 //         null,
 //         { params: { quantity: item.quantity - 1 } }
 //       )
@@ -49,7 +49,7 @@
 
 //   const removeItem = (id) => {
 //     axios
-//       .delete(`https://foodfly-backend-11.onrender.com/cart/delete/${id}`)
+//       .delete(`https://foodfly-backend-12.onrender.com/cart/delete/${id}`)
 //       .then(() => loadCart())
 //       .catch((err) => console.log(err));
 //   };
