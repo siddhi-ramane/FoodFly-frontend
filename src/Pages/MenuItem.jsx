@@ -22,7 +22,7 @@ const [menuData, setMenuData] = useState([]);
   // useEffect(() => {
   //   const fetchMenu = async () => {
   //     try {
-  //       const response = await axios.get("https://foodfly-backend-17.onrender.com/menuItems/get");
+  //       const response = await axios.get("http://localhost:8080/menuItems/get");
   //       setMenu(response.data);
        
 
@@ -45,7 +45,7 @@ useEffect(() => {
   const pagedata = async () => {
     try {
       const res = await axios.get(
-        `https://foodfly-backend-17.onrender.com/menuItems/get?page=${page}&size=${size}`
+        `http://localhost:8080/menuItems/get?page=${page}&size=${size}`
       );
 
      
@@ -79,7 +79,7 @@ if (isApproved !== 1) {
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post("https://foodfly-backend-17.onrender.com/cart/add/cart",
+    axios.post("http://localhost:8080/cart/add/cart",
        {
         user: { id: user.id },     
         menu: { id: item.id },    

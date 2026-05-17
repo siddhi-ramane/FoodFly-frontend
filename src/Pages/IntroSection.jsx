@@ -24,7 +24,7 @@ const IntroSection = () => {
 
   const items = async () => {
     try {
-      const info = await axios.get("https://foodfly-backend-17.onrender.com/items/getItems");
+      const info = await axios.get("http://localhost:8080/items/getItems");
        setItemsData(info.data); 
     } catch (error) 
     {
@@ -36,7 +36,7 @@ const IntroSection = () => {
   const cuisinedata = async () => {
     try {
       const info = 
-      await axios.get("https://foodfly-backend-17.onrender.com/cuisine/getcusine");
+      await axios.get("http://localhost:8080/cuisine/getcusine");
     setCuisineData(info.data);
     } 
     catch (error) {

@@ -18,7 +18,7 @@ function ResetPasswordUI() {
 
     try {
       const res = await axios.post(
-        `https://foodfly-backend-17.onrender.com/send-code?email=${email}`
+        `http://localhost:8080/send-code?email=${email}`
       );
 
       setMsg(res.data);

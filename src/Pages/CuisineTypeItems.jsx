@@ -11,12 +11,17 @@ const [msg, setmsg] = useState("");
 
 const user = JSON.parse(localStorage.getItem("user"));
 const addToCart = (item) => {
-   
+   if (!user) {
+      alert("Please login first");
+      navigate("/login");
+      return;
+    } 
+
 const quantity = 1;
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post("https://foodfly-backend-17.onrender.com/cart/add/cart",
+    axios.post("http://localhost:8080/cart/add/cart",
        {
         user: { id: user.id },     
         menu: { id: item.id },    
@@ -30,10 +35,10 @@ const quantity = 1;
         }
     
     })
-    .then(() => {
-      alert("Item Added To Cart");
-      navigate("/cart");
-    })
+    // .then(() => {
+    //   alert("Item Added To Cart");
+    //   navigate("/cart");
+    // })
     .catch(err => {
       console.error(err);
       alert("Error adding item to cart");
@@ -47,7 +52,7 @@ useEffect(()=>{
     const cuisineData = async()=>{
 try {
 
-      const ans = await axios.get(`https://foodfly-backend-17.onrender.com/menuItems/cuisine/${id}`)
+      const ans = await axios.get(`http://localhost:8080/menuItems/cuisine/${id}`)
       setdata(ans.data);
     } catch (error) {
           setmsg("Items not Found");

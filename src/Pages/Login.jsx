@@ -24,7 +24,7 @@ const submition = async (e)=>{
     e.preventDefault();
 
     try{
-        const resp = await axios.post("https://foodfly-backend-17.onrender.com/customerDetails/login",
+        const resp = await axios.post("http://localhost:8080/customerDetails/login",
 
             {
                email: form.email,
