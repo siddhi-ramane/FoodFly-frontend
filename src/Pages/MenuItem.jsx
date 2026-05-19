@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './MenuCard.css';
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { BASE_URL } from "./api";
 
 const MenuItem = () => {
   // const [menu, setMenu] = useState([]);
@@ -22,7 +23,7 @@ const [menuData, setMenuData] = useState([]);
   // useEffect(() => {
   //   const fetchMenu = async () => {
   //     try {
-  //       const response = await axios.get("https://foodfly-backend-111.onrender.com/menuItems/get");
+  //       const response = await axios.get(`${BASE_URL}/menuItems/get`);
   //       setMenu(response.data);
        
 
@@ -45,7 +46,7 @@ useEffect(() => {
   const pagedata = async () => {
     try {
       const res = await axios.get(
-        `https://foodfly-backend-111.onrender.com/menuItems/get?page=${page}&size=${size}`
+        `${BASE_URL}/menuItems/get?page=${page}&size=${size}`
       );
 
      
@@ -79,7 +80,7 @@ if (isApproved !== 1) {
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post("https://foodfly-backend-111.onrender.com/cart/add/cart",
+    axios.post(`${BASE_URL}/cart/add/cart`,
        {
         user: { id: user.id },     
         menu: { id: item.id },    

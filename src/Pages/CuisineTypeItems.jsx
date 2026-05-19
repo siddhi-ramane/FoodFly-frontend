@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import './CuisineTypeItems.css'
+import { BASE_URL } from "./api";
 
 const CuisineTypeItems = () => {
 const {id} = useParams();
@@ -21,7 +22,7 @@ const quantity = 1;
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post("https://foodfly-backend-111.onrender.com/cart/add/cart",
+    axios.post(`${BASE_URL}/cart/add/cart`,
        {
         user: { id: user.id },     
         menu: { id: item.id },    
@@ -54,7 +55,7 @@ useEffect(()=>{
     const cuisineData = async()=>{
 try {
 
-      const ans = await axios.get(`https://foodfly-backend-111.onrender.com/menuItems/cuisine/${id}`)
+      const ans = await axios.get(`${BASE_URL}/menuItems/cuisine/${id}`)
       setdata(ans.data);
     } catch (error) {
           setmsg("Items not Found");

@@ -3,6 +3,7 @@ import "./IntroSection.css";
 import foodflyImage from "../assets/foodflyImage.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "./api";
 
 const IntroSection = () => {
   // const [item, setitem] = useState([]);
@@ -24,7 +25,7 @@ const IntroSection = () => {
 
   const items = async () => {
     try {
-      const info = await axios.get("https://foodfly-backend-111.onrender.com/items/getItems");
+      const info = await axios.get(`${BASE_URL}/items/getItems`);
        setItemsData(info.data); 
     } catch (error) 
     {
@@ -36,7 +37,7 @@ const IntroSection = () => {
   const cuisinedata = async () => {
     try {
       const info = 
-      await axios.get("https://foodfly-backend-111.onrender.com/cuisine/getcusine");
+      await axios.get(`${BASE_URL}/cuisine/getcusine`);
     setCuisineData(info.data);
     } 
     catch (error) {

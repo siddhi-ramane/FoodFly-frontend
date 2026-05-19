@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import './Login.css'
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from "./api";
 
 const Login = () => {
     const [form, setForm] = useState({
@@ -24,7 +25,7 @@ const submition = async (e)=>{
     e.preventDefault();
 
     try{
-        const resp = await axios.post("https://foodfly-backend-111.onrender.com/customerDetails/login",
+        const resp = await axios.post(`${BASE_URL}/customerDetails/login`,
 
             {
                email: form.email,

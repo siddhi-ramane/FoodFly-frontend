@@ -4,6 +4,7 @@ import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import logo from '../assets/logo.png';
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Navbar = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);

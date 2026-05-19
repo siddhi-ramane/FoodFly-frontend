@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import "./RestaurantLogin.css"
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from "./api";
 
 const RestaurantLogin = () => {
 const navigate  = useNavigate();
@@ -23,7 +24,7 @@ const [message, setMessage] = useState("");
 e.preventDefault();
 
         try {
-            const ress = await axios.post("https://foodfly-backend-111.onrender.com/Role/Login",
+            const ress = await axios.post(`${BASE_URL}/Role/Login`,
         {
             email: form.email,
             password: form.password

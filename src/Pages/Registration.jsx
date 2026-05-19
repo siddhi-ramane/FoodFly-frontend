@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Registration.css'
 import axios from 'axios';
-
+import { BASE_URL } from "./api";
 const Registration = () => {
 
     const [form, setForm] = useState({name : "" ,
@@ -41,7 +41,7 @@ const handleSubmit = async (e) =>{
      }
 
      try{
-        const resp = await axios.post("https://foodfly-backend-111.onrender.com/customerDetails/register", 
+        const resp = await axios.post(`${BASE_URL}/customerDetails/register`, 
            {
             name : form.name,
             lastName: form.lastname,

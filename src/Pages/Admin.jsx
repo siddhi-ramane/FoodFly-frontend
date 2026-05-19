@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import './MenuCard.css';
+import { BASE_URL } from "./api";
 
 const Admin = () => {
   const [select, setSelect] = useState("menulist");
@@ -18,7 +19,7 @@ const Admin = () => {
     const getMenu = async () => {
       if (select === "menulist") {
         try {
-          const response = await axios.get("https://foodfly-backend-111.onrender.com/menu/get");
+          const response = await axios.get(`${BASE_URL}/menu/get`);
           setMenu(response.data);
         } catch (error) {
           console.error("Error fetching menu:", error);
@@ -45,7 +46,7 @@ const Admin = () => {
 
   const Patchhandle =  async (id)=>{
         try {
-           await axios.patch(`https://foodfly-backend-111.onrender.com/menu/${id}/approve`,
+           await axios.patch(`${BASE_URL}/menu/${id}/approve`,
            {
             isApproved: "true"
            },
@@ -68,7 +69,7 @@ const Admin = () => {
 
  const deletehandlee =  async (id)=>{
         try {
-           await axios.delete(`https://foodfly-backend-111.onrender.com/menu/${id}/delete`,
+           await axios.delete(`${BASE_URL}/menu/${id}/delete`,
           
           );
            alert("Successfully Rejected"
@@ -99,7 +100,7 @@ const Admin = () => {
     }
     try {
      await axios.post(
-        "https://foodfly-backend-111.onrender.com/role/add",
+        `${BASE_URL}/role/add`,
         {
           username: form.username,
           password: form.password,

@@ -3,6 +3,7 @@ import "./FastDeliverySection.css";
 import fastDeliveryImage from "../assets/fastDeliveryImage.png";
 import { useNavigate } from "react-router-dom";
 
+
 const FastDeliverySection = () => {
 
   const navigate = useNavigate();

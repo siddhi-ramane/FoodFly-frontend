@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./RestaurantAdmin.css";
+import { BASE_URL } from "./api";
 
 const RestaurantAdmin = () => {
 
@@ -24,7 +25,7 @@ const RestaurantAdmin = () => {
 
 const data = async ()=>{
 try {
-    const resss =  await axios.get("https://foodfly-backend-111.onrender.com/cuisine/getcusine");
+    const resss =  await axios.get(`${BASE_URL}/cuisine/getcusine`);
 setcusine(resss.data);
 
 } catch (error) {
@@ -56,7 +57,7 @@ useEffect(()=>{
       prep_time: form.prep_time ? Number(form.prep_time) : null,
       isActive: form.isActive ?? true,
  }
-      await axios.post("https://foodfly-backend-111.onrender.com/menu/add/items",
+      await axios.post(`${BASE_URL}/menu/add/items`,
          submitdata,
           {
         headers: { "Content-Type": "application/json" },

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useCallback } from "react";
+import { BASE_URL } from "./api";
 
 const CartPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -17,7 +18,7 @@ const CartPage = () => {
 const getdata = useCallback(async () => {
   try {
     const respo = await axios.get(
-      `https://foodfly-backend-111.onrender.com/cart/get/${userId}`
+      `${BASE_URL}/cart/get/${userId}`
     );
     setitemdata(respo.data);
   } catch (error) {
@@ -33,7 +34,7 @@ useEffect(() => {
   const increasequantity = async (item) => {
     try {
       await axios.patch(
-        "https://foodfly-backend-111.onrender.com/cart/update/cartitems",
+        `${BASE_URL}/cart/update/cartitems`,
         {
           cartid: item.cartid,
           quantity: item.quantity + 1,
@@ -55,7 +56,7 @@ useEffect(() => {
 
     try {
       await axios.patch(
-        "https://foodfly-backend-111.onrender.com/cart/update/cartitems",
+        `${BASE_URL}/cart/update/cartitems`,
         {
           cartid: item.cartid,
           quantity: item.quantity - 1,
@@ -75,7 +76,7 @@ useEffect(() => {
   const deleteitem = async (item) => {
     try {
       await axios.delete(
-        `https://foodfly-backend-111.onrender.com/cart/delete/${item.cartid}`
+        `${BASE_URL}/cart/delete/${item.cartid}`
       );
       getdata();
     } catch (error) {
@@ -101,7 +102,7 @@ useEffect(() => {
   const orderpostt = async () => {
     try {
       const res = await axios.post(
-        "https://foodfly-backend-111.onrender.com/create-order",
+        `${BASE_URL}/create-order`,
         orderdata
       );
 
