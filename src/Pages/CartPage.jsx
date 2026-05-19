@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaMinus, FaPlus } from "react-icons/fa6";
+import { useCallback } from "react";
 
 const CartPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -11,21 +12,23 @@ const CartPage = () => {
   const [itemdata, setitemdata] = useState([]);
   const [msg, setmsg] = useState("");
 
-  const getdata = async () => {
-    try {
-      const respo = await axios.get(
-        `https://foodfly-backend-111.onrender.com/cart/get/${userId}`
-      );
-      setitemdata(respo.data);
-    } catch (error) {
-      setmsg("No Item Found");
-    }
-  };
+  
 
-  useEffect(() => {
-    if (!userId) return;
-    getdata();
-  }, [userId]);
+const getdata = useCallback(async () => {
+  try {
+    const respo = await axios.get(
+      `https://foodfly-backend-111.onrender.com/cart/get/${userId}`
+    );
+    setitemdata(respo.data);
+  } catch (error) {
+    setmsg("No Item Found");
+  }
+}, [userId]);
+
+useEffect(() => {
+  if (!userId) return;
+  getdata();
+}, [getdata, userId]);
 
   const increasequantity = async (item) => {
     try {
