@@ -17,7 +17,7 @@ const CartPage = () => {
 const getdata = useCallback(async () => {
   try {
     const respo = await axios.get(
-      `https://foodfly-backend-111.onrender.com/cart/get/${userId}`
+      `https://foodfly-backend-111.onrender.com/api/cart/get/${userId}`
     );
     setitemdata(respo.data);
   } catch (error) {
@@ -33,7 +33,7 @@ useEffect(() => {
   const increasequantity = async (item) => {
     try {
       await axios.patch(
-        "https://foodfly-backend-111.onrender.com/cart/update/cartitems",
+        "https://foodfly-backend-111.onrender.com/api/cart/update/cartitems",
         {
           cartid: item.cartid,
           quantity: item.quantity + 1,
@@ -55,7 +55,7 @@ useEffect(() => {
 
     try {
       await axios.patch(
-        "https://foodfly-backend-111.onrender.com/cart/update/cartitems",
+        "https://foodfly-backend-111.onrender.com/api/cart/update/cartitems",
         {
           cartid: item.cartid,
           quantity: item.quantity - 1,
@@ -75,7 +75,7 @@ useEffect(() => {
   const deleteitem = async (item) => {
     try {
       await axios.delete(
-        `https://foodfly-backend-111.onrender.com/cart/delete/${item.cartid}`
+        `https://foodfly-backend-111.onrender.com/api/cart/delete/${item.cartid}`
       );
       getdata();
     } catch (error) {
@@ -101,7 +101,7 @@ useEffect(() => {
   const orderpostt = async () => {
     try {
       const res = await axios.post(
-        "https://foodfly-backend-111.onrender.com/create-order",
+        "https://foodfly-backend-111.onrender.com/api/create-order",
         orderdata
       );
 

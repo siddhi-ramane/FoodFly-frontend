@@ -21,7 +21,7 @@ const quantity = 1;
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post("https://foodfly-backend-111.onrender.com/cart/add/cart",
+    axios.post("https://foodfly-backend-111.onrender.com/api/cart/add/cart",
        {
         user: { id: user.id },     
         menu: { id: item.id },    
@@ -54,7 +54,7 @@ useEffect(()=>{
     const cuisineData = async()=>{
 try {
 
-      const ans = await axios.get(`https://foodfly-backend-111.onrender.com/menuItems/cuisine/${id}`)
+      const ans = await axios.get(`https://foodfly-backend-111.onrender.com/api/menuItems/cuisine/${id}`)
       setdata(ans.data);
     } catch (error) {
           setmsg("Items not Found");
