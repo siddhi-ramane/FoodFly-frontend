@@ -43,7 +43,7 @@ const quantity = 1;
     })
     .catch(err => {
       console.error(err);
-      alert("Error adding item to cart");
+      alert("loading....");
     });
   
 
@@ -60,7 +60,7 @@ const quantity = 1;
         
         
       } catch (error) {
-            setmsg("Items not Found");
+            setmsg("loading....");
       }
       
       }

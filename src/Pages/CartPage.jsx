@@ -22,7 +22,7 @@ const getdata = useCallback(async () => {
     );
     setitemdata(respo.data);
   } catch (error) {
-    setmsg("No Item Found");
+    setmsg("loading....");
   }
 }, [userId]);
 

@@ -58,7 +58,7 @@ try {
       const ans = await axios.get(`${BASE_URL}/menuItems/cuisine/${id}`)
       setdata(ans.data);
     } catch (error) {
-          setmsg("Items not Found");
+          setmsg("loading....");
     }
     }
 

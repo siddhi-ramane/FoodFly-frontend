@@ -54,7 +54,7 @@ useEffect(() => {
       settotalPages(res.data.totalPages);
 
     } catch (error) {
-      setMsg("No Items Found");
+      setMsg("loading....");
     }
   };
 
@@ -100,7 +100,7 @@ if (isApproved !== 1) {
     })
     .catch(err => {
       console.error(err);
-      alert("Error adding item to cart");
+      alert("loading....");
     });
   };
 
