@@ -30,7 +30,12 @@ const submition = async (e)=>{
             {
                email: form.email,
         password: form.password
-      });
+      },
+     {
+            headers: {
+              "Content-Type": "application/json"} 
+        
+     });
 
       const userData = resp.data;
 

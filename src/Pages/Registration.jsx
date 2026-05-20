@@ -48,7 +48,7 @@ const handleSubmit = async (e) =>{
             phoneNumber: form.PhoneNumber,
             email: form.email,
             password: form.password,
-           profile: form.img,
+          //  profile: form.img,
            area: form.location,
            address: form.address,
            state: form.state,
@@ -71,7 +71,7 @@ const handleSubmit = async (e) =>{
         PhoneNumber: "",
         password: "",
         confirmpassword: "",
-        img: null,
+        // img: null,
         address:"",
         location: "",
         state: "",
@@ -103,9 +103,9 @@ const handleSubmit = async (e) =>{
         <input type="password" name='confirmpassword' value={form.confirmpassword} placeholder='Confirm Password' required onChange={hanndleChange} />
       </div>
 
-      <div className="form-row">
+      {/* <div className="form-row">
      <input type="file" accept='image/*' name='img' onChange={hanndleChange} />
-      </div>
+      </div> */}
 
       <div className="form-row">
     <input type="text" name='address' value={form.address} placeholder='Address' onChange={hanndleChange}/>
