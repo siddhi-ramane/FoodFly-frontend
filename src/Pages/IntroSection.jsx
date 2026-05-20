@@ -169,8 +169,42 @@ const IntroSection = () => {
           </button>
         </div>
       </div>
+
+       
+     
+    
+
+      
+      <div className="main">
+        <h2 className="title">Dashboard</h2>
+
+        <div className="cardContainer">
+
+          <div className="card">
+            <h3>Super Admin</h3>
+            <p>Manage users, system settings, analytics</p>
+            <button onClick={() => navigate("/admin")} className="sideBtn">
+          Super Admin
+        </button>
+          </div>
+
+          <div className="card">
+            <h3>Restaurant</h3>
+            <p>Manage menu, orders, profile</p>
+              
+
+        <button onClick={() => navigate("/restaurant/login")} className="sideBtn">
+          Restaurant
+        </button>
+          </div>
+
+        </div>
+      </div>
+
+    
     </>
   );
+  
 };
 
 export default IntroSection;
