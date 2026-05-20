@@ -10,7 +10,7 @@ const IntroSection = () => {
   // const [data, setdata] = useState([]);
   const [msg, setmsg] = useState("");
   const navigate = useNavigate();
-  const [itemsData, setItemsData] = useState([]);   
+  // const [itemsData, setItemsData] = useState([]);   
   const [cuisineData, setCuisineData] = useState([]);
 
   // const itemScrollRef = useRef();
@@ -26,7 +26,7 @@ const IntroSection = () => {
   const items = async () => {
     try {
       const info = await axios.get(`${BASE_URL}/items/getItems`);
-       setItemsData(info.data); 
+       setCuisineData(info.data); 
     } catch (error) 
     {
       setmsg("Items not Found");
@@ -131,7 +131,7 @@ const IntroSection = () => {
 
       <div className="carousel-wrapper">
         <h2 className="carousel-title">Explore Our Cuisines </h2>
-        {/* <p>Total Items Available: {itemsData.length}</p> */}
+        {/* <p> {itemsData.length}</p> */}
 
       {msg && <div className="error-msg">{msg}</div>}
 
