@@ -24,7 +24,7 @@ const [message, setMessage] = useState("");
 e.preventDefault();
 
         try {
-            const ress = await axios.post(`${BASE_URL}/role/Login`,
+            const ress = await axios.post(`${BASE_URL}/role/login`,
         {
             email: form.email,
             password: form.password
