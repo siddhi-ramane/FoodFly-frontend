@@ -68,6 +68,10 @@ const submition = async (e)=>{
                 <input type="password" name='password' value={form.password} required placeholder='Enter Password' onChange={handleChange}/>
                <button type="submit">Login</button>
             </form>
+            <p>
+            Not logging in?{" "}
+            <span onClick={() => nagivate("/register")} style={{ color: "blue", cursor: "pointer" }}>Register</span>
+        </p>
             {/* <p  className='paraa' onClick={()=>nagivate("/forgetPassword")}>Forget Password?</p> */}
 
             <div className="message">{message}</div>

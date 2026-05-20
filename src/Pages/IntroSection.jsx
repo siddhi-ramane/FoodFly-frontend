@@ -131,7 +131,7 @@ const IntroSection = () => {
 
       <div className="carousel-wrapper">
         <h2 className="carousel-title">Explore Our Cuisines </h2>
-        <p>Total Items Available: {itemsData.length}</p>
+        {/* <p>Total Items Available: {itemsData.length}</p> */}
 
       {msg && <div className="error-msg">{msg}</div>}
 
