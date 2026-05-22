@@ -22,7 +22,7 @@ const quantity = 1;
     const price = item.price;
     const total_amt = quantity * price;
 
-    axios.post(`${BASE_URL}/cart/add/cart`,
+     axios.post(`${BASE_URL}/cart/add/cart`,
         {
         user: { id: user.id },     
         menu: { id: item.id },    
