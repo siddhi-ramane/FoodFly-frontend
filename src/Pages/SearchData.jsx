@@ -43,7 +43,7 @@ const quantity = 1;
     })
     .catch(err => {
       console.error(err);
-      alert("loading....");
+      alert("Error Adding to cart");
     });
   
 

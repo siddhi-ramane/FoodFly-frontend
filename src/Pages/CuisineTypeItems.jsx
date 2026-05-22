@@ -23,7 +23,7 @@ const quantity = 1;
     const total_amt = quantity * price;
 
     axios.post(`${BASE_URL}/cart/add/cart`,
-       {
+        {
         user: { id: user.id },     
         menu: { id: item.id },    
         quantity: 1,
@@ -36,21 +36,20 @@ const quantity = 1;
         }
     
     })
-    // .then(() => {
-    //   alert("Item Added To Cart");
-    //   navigate("/cart");
-    // })
+    .then(() => {
+      alert("Item Added To Cart");
+      navigate("/cart");
+    })
     .catch(err => {
       console.error(err);
       alert("Error adding item to cart");
     });
   
-
-  }   
+  }
+      
    
-  alert("Item Added to cart");
-  navigate("/cart");
   };
+
 useEffect(()=>{
     const cuisineData = async()=>{
 try {
