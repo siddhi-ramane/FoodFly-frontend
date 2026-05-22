@@ -70,11 +70,11 @@ useEffect(() => {
       return;
     }
 
-  const isApproved = parseInt(user.isApproved || user.is_approved || "0", 10);
-if (isApproved !== 1) {
-  alert("Your account is not approved yet!");
-  return;
-}
+//   const isApproved = parseInt(user.isApproved || user.is_approved || "0", 10);
+// if (isApproved !== 1) {
+//   alert("Your account is not approved yet!");
+//   return;
+// }
 
     const quantity = 1;
     const price = item.price;
@@ -100,7 +100,7 @@ if (isApproved !== 1) {
     })
     .catch(err => {
       console.error(err);
-      alert("loading....");
+      alert("Error adding to cart");
     });
   };
 

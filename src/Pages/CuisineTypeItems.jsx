@@ -12,18 +12,25 @@ const [msg, setmsg] = useState("");
 
 const user = JSON.parse(localStorage.getItem("user"));
 const addToCart = (item) => {
-   if (!user) {
+ 
+    if (!user) {
       alert("Please login first");
       navigate("/login");
       return;
-    } else{
+    }
 
-const quantity = 1;
+//   const isApproved = parseInt(user.isApproved || user.is_approved || "0", 10);
+// if (isApproved !== 1) {
+//   alert("Your account is not approved yet!");
+//   return;
+// }
+
+    const quantity = 1;
     const price = item.price;
     const total_amt = quantity * price;
 
-     axios.post(`${BASE_URL}/cart/add/cart`,
-        {
+    axios.post(`${BASE_URL}/cart/add/cart`,
+       {
         user: { id: user.id },     
         menu: { id: item.id },    
         quantity: 1,
@@ -42,12 +49,8 @@ const quantity = 1;
     })
     .catch(err => {
       console.error(err);
-      alert("Error adding item to cart");
+      alert("Error adding to cart");
     });
-  
-  }
-      
-   
   };
 
 useEffect(()=>{
